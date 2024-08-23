@@ -7,7 +7,7 @@ export class VideoService {
     perPage: number = 10
   ): Promise<IVideo[]> {
     const response = await api.get(
-      `/videos?_page=${page}&_per_page=${perPage}}`
+      `/videos?_page=${page}&_per_page=${page * perPage}}`
     );
     return response.data.data;
   }

@@ -20,7 +20,9 @@ export const DetailVideo = ({
         isMuted={false}
       />
       <Text style={styles.title}>{data?.title}</Text>
-      <Text style={styles.description}>{data?.description}</Text>
+      {data?.description && (
+        <Text style={styles.description}>{data?.description}</Text>
+      )}
       <Text style={styles.stats}>
         {data?.views} views • {data?.likes} likes
       </Text>

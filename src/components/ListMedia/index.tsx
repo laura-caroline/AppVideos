@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import {
   View,
   FlatList,
@@ -10,9 +10,14 @@ import {
 import { styles } from './styles';
 import { IListMediaProps, IRenderItem } from './interfaces';
 
-export const ListMedia = ({ mediaData, clickItem }: IListMediaProps) => {
+export const ListMedia = ({
+  mediaData,
+  onEndReached,
+  clickItem,
+}: IListMediaProps) => {
   const renderItem = ({ item }: IRenderItem) => (
     <TouchableOpacity
+      activeOpacity={1}
       onPress={() => clickItem(item.id)}
       style={styles.videoContainer}
     >
@@ -22,18 +27,23 @@ export const ListMedia = ({ mediaData, clickItem }: IListMediaProps) => {
     </TouchableOpacity>
   );
 
+
   return (
     <View style={styles.list}>
-      {!mediaData.length ? (
+      {!mediaData?.length ? (
         <Text style={styles.emptyMessage}>
           Não há nenhum vídeo cadastrado no sistema
         </Text>
       ) : (
         <FlatList
           data={mediaData}
-          keyExtractor={(media) => media.id}
+          maintainVisibleContentPosition={{
+            minIndexForVisible: 0, 
+          }}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={renderItem}
           contentContainerStyle={styles.listContent}
+          onEndReached={onEndReached} 
         />
       )}
     </View>
