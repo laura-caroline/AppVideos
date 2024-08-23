@@ -1,4 +1,3 @@
-import SkeletonPlaceholder from 'react-native-skeleton-placeholder';
 import { LinearGradient } from 'expo-linear-gradient';
 import { View } from 'react-native';
 

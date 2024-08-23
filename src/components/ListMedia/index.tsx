@@ -6,6 +6,7 @@ import {
   Image,
   TouchableOpacity,
   Button,
+  Animated,
 } from 'react-native';
 import { styles } from './styles';
 import { IListMediaProps, IRenderItem } from './interfaces';
@@ -15,18 +16,44 @@ export const ListMedia = ({
   onEndReached,
   clickItem,
 }: IListMediaProps) => {
-  const renderItem = ({ item }: IRenderItem) => (
-    <TouchableOpacity
-      activeOpacity={1}
-      onPress={() => clickItem(item.id)}
-      style={styles.videoContainer}
-    >
-      <Image style={styles.thumbnail} source={{ uri: item.thumbnail }} />
-      <Text style={styles.title}>{item.title}</Text>
-      <Button title='Ver detalhes' onPress={() => clickItem(item.id)} />
-    </TouchableOpacity>
-  );
+  const opacity = useRef(new Animated.Value(0)).current;
+    const translateY = useRef(new Animated.Value(50)).current;
 
+    Animated.parallel([
+      Animated.timing(opacity, {
+        toValue: 1,
+        duration: 500,
+        useNativeDriver: true,
+      }),
+      Animated.timing(translateY, {
+        toValue: 0,
+        duration: 500,
+        useNativeDriver: true,
+      }),
+    ]).start();
+
+  const renderItem = ({ item}: IRenderItem) => {
+    return (
+      <TouchableOpacity
+        activeOpacity={1}
+        onPress={() => clickItem(item.id)}
+        style={styles.videoContainer}
+      >
+        <Animated.View
+          style={[
+            {
+              opacity: opacity,
+              transform: [{ translateY: translateY }],
+            },
+          ]}
+        >
+          <Image style={styles.thumbnail} source={{ uri: item.thumbnail }} />
+          <Text style={styles.title}>{item.title}</Text>
+          <Button title='Ver detalhes' onPress={() => clickItem(item.id)} />
+        </Animated.View>
+      </TouchableOpacity>
+    );
+  };    
 
   return (
     <View style={styles.list}>
