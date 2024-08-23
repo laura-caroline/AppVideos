@@ -5,7 +5,7 @@ import { VideoService } from '@services/VideoService';
 import { useCallback, useEffect, useState } from 'react';
 import { Alert, View } from 'react-native';
 import { styles } from './styles';
-import { Skeleton } from '@components/Skeleton';
+import { SkeletonDetailsVideo } from '@components/Skeleton/DetailVideo';
 
 export const DetailsVideos = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -76,7 +76,7 @@ export const DetailsVideos = () => {
   return (
     <View style={styles.containerView}>
       {isLoading ? (
-        <Skeleton />
+        <SkeletonDetailsVideo />
       ) : (
         <DetailVideo
           data={detailVideo}

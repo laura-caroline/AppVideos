@@ -1,5 +1,4 @@
 import { ListMedia } from '@components/ListMedia';
-import { Skeleton } from '@components/Skeleton';
 import { ParamListBase, useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import ScreenName from '@routes/screenName';
@@ -8,6 +7,7 @@ import { VideoService } from '@services/VideoService';
 import { useEffect, useState } from 'react';
 import { Alert, View } from 'react-native';
 import { styles } from './styles';
+import { SkeletonListVideos } from '@components/Skeleton/ListVideos';
 
 export const ListVideos = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -30,7 +30,7 @@ export const ListVideos = () => {
         err.message ?? 'Ocorreu um erro, tente novamente mais tarde!'
       );
     } finally {
-      setIsLoading(false);
+      setIsLoading(true);
     }
   };
 
@@ -47,8 +47,8 @@ export const ListVideos = () => {
   }
 
     return (
-      <>
-        {isLoading && <Skeleton/>}
+      <View style={styles.containerView}>
+        {isLoading && <SkeletonListVideos/>}
         {listVideos?.length ? (
           <ListMedia
               clickItem={showDetailsVideo}
@@ -56,8 +56,7 @@ export const ListVideos = () => {
               mediaData={listVideos}
             />
         ): null}
-        
-      </>
+      </View>
       
   );
 };
