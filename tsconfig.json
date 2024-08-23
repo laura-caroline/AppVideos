@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@components/*": ["src/components/*"],
+      "@pages/*": ["src/pages/*"],
+      "@routes/*": ["src/routes/*"],
+      "@services/*": ["src/services/*"],
+      "@utils/*": ["src/utils/*"]
+    },
+    "target": "esnext",
+    "module": "esNext",
+    "lib": ["esnext"],
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "react-native",
+    "outDir": "dist",
+    "types": ["react", "react-native", "jest"],
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "removeComments": true,
+    "pretty": true,
+    "resolveJsonModule": true
+  },
+  "exclude": ["android", "ios", "node_modules"],
+  "include": ["src/**/*", "*", ".d.ts"],
+  "extends": "expo/tsconfig.base"
+}
