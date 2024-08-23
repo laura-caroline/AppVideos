@@ -16,7 +16,6 @@ export const SkeletonDetailsVideo = () => {
         <Rect x="0" y="0" rx="10" ry="10" width="100%" height="200" />
       </ContentLoader>
 
-      {/* Skeleton para o título */}
       <View style={styles.title}>
         <ContentLoader
           speed={1}
@@ -30,7 +29,6 @@ export const SkeletonDetailsVideo = () => {
         </ContentLoader>
       </View>
 
-      {/* Skeleton para a descrição */}
       <View style={styles.description}>
         <ContentLoader
           speed={1}
@@ -46,7 +44,6 @@ export const SkeletonDetailsVideo = () => {
         </ContentLoader>
       </View>
 
-      {/* Skeleton para as estatísticas (views/likes) */}
       <View style={styles.stats}>
         <ContentLoader
           speed={1}
@@ -60,7 +57,6 @@ export const SkeletonDetailsVideo = () => {
         </ContentLoader>
       </View>
 
-      {/* Skeleton para o botão "DESCURTIR" */}
       <View style={styles.button}>
         <ContentLoader
           speed={1}
