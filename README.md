@@ -27,13 +27,14 @@ Liste as ferramentas e softwares necessários para rodar o projeto:
     ```bash
     npx json-server db.json
     ```
+5. Modifique em src/services/config/api e coloquei seu endereço ip do dispostivo da rede
 
-5. Rode o projeto:
+6. Rode o projeto:
     ```bash
     npm run android
     ```
 
-6. Rode os testes de funcionalidades:
+7. Rode os testes de funcionalidades:
     ```bash
     npm run jest
     ```
