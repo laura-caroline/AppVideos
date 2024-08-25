@@ -27,13 +27,13 @@ Liste as ferramentas e softwares necessários para rodar o projeto:
     npm install
     ```
 
-4. Suba a API com os dados mockados:
+4. Abra outra aba no terminal(fica no mesmo caminho do projeto) e suba a API com os dados mockados:
     ```bash
     npx json-server db.json
     ```
 5. Modifique em src/services/config/api e coloquei seu endereço ip do dispostivo da rede
 
-6. Rode o projeto:
+6. Volte para aba anterior e rode o projeto:
     ```bash
     npm run android
     ```
