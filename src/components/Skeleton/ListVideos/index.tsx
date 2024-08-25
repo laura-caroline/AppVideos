@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import ContentLoader, { Rect } from 'react-content-loader/native';
+import { colors } from 'src/stylesSystem';
 
 export const SkeletonListVideos = () => {
   const Item = ()=> (
@@ -55,11 +56,11 @@ export const SkeletonListVideos = () => {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     borderRadius: 10,
     padding: 10,
     alignItems: 'center',
-    shadowColor: '#000',
+    shadowColor: colors.black,
     shadowOpacity: 0.1,
     shadowOffset: { width: 0, height: 5 },
     shadowRadius: 10,

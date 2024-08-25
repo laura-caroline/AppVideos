@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from 'src/stylesSystem';
 
 export const styles = StyleSheet.create({
   container: {
@@ -20,7 +21,7 @@ export const styles = StyleSheet.create({
   },
   stats: {
     fontSize: 12,
-    color: 'gray',
+    color: colors.gray,
     marginVertical: 8,
   },
 });

@@ -1,24 +1,25 @@
 import { StyleSheet } from 'react-native';
+import { colors } from 'src/stylesSystem';
 
 export const styles = StyleSheet.create({
   list: {
     justifyContent: 'center',
     alignItems: 'center',
     padding: 10,
-    backgroundColor: '#f5f5f5',
+    backgroundColor: colors.grayLight,
   },
   videoContainer: {
     marginBottom: 20,
     borderRadius: 10,
-    backgroundColor: '#fff',
-    shadowColor: '#000',
+    backgroundColor: colors.white,
+    shadowColor: colors.black,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 4,
     elevation: 5,
     overflow: 'hidden',
     borderWidth: 1,
-    borderColor: '#ccc',
+    borderColor: colors.grayLight,
     padding: 15,
   },
   thumbnail: {
@@ -29,7 +30,7 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: '#333',
+    color: colors.gray,
     padding: 15,
   },
   listContent: {
@@ -38,6 +39,6 @@ export const styles = StyleSheet.create({
   emptyMessage: {
     fontSize: 16,
     textAlign: 'center',
-    color: 'gray',
+    color: colors.gray,
   },
 });

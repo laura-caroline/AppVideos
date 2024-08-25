@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ContentLoader, { Rect } from 'react-content-loader/native';
+import { colors } from 'src/stylesSystem';
 
 export const SkeletonDetailsVideo = () => {
   return (
@@ -94,17 +95,17 @@ export const styles = StyleSheet.create({
   },
   stats: {
     fontSize: 12,
-    color: 'gray',
+    color: colors.gray,
     marginVertical: 8,
   },
   button: {
-    marginTop: 16, // Adiciona um espaço entre o botão e os elementos acima
-    width: '100%', // Faz o botão ocupar toda a largura disponível
-    height: 40, // Define a altura do botão
-    backgroundColor: '#007BFF', // Cor de fundo (ajuste conforme necessário)
-    justifyContent: 'center', // Alinha o texto do botão verticalmente ao centro
-    alignItems: 'center', // Alinha o texto do botão horizontalmente ao centro
-    borderRadius: 5, // Arredonda os cantos do botão
+    marginTop: 16, 
+    width: '100%', 
+    height: 40, 
+    backgroundColor: colors.blueLight, 
+    justifyContent: 'center', 
+    alignItems: 'center',
+    borderRadius: 5, 
   },
 
 });
