@@ -4,7 +4,7 @@ import ContentLoader, { Rect } from 'react-content-loader/native';
 
 export const SkeletonDetailsVideo = () => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='skeleton-details-video'>
       <ContentLoader
         speed={1}
         width="100%"

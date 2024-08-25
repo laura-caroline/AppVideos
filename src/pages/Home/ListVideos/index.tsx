@@ -24,13 +24,14 @@ export const ListVideos = () => {
         perPage
       );
       setListVideos(videosPaginated);
+      
     } catch (err: any) {
       Alert.alert(
         'Error',
-        err.message ?? 'Ocorreu um erro, tente novamente mais tarde!'
+        err.message ?? 'Ocorreu um erro ao buscar os vídeos'
       );
     } finally {
-      setIsLoading(true);
+      setIsLoading(false);
     }
   };
 

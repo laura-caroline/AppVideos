@@ -62,7 +62,7 @@ export const ListMedia = ({
           Não há nenhum vídeo cadastrado no sistema
         </Text>
       ) : (
-        <FlatList
+        <FlatList testID='list-media'
           data={mediaData}
           maintainVisibleContentPosition={{
             minIndexForVisible: 0, 
@@ -71,6 +71,8 @@ export const ListMedia = ({
           renderItem={renderItem}
           contentContainerStyle={styles.listContent}
           onEndReached={onEndReached} 
+          onEndReachedThreshold={0.1}  // Ajuste do threshold
+
         />
       )}
     </View>

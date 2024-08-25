@@ -13,7 +13,7 @@ export const DetailsVideos = () => {
   const [isLiked, setIsLiked] = useState<boolean>(false);
   const route = useRoute();
 
-  const idVideo = route?.params?.idVideo;
+  const {idVideo}: string | any = route?.params;
 
   const getDetailVideo = async (idVideo: string) => {
     try {
@@ -47,7 +47,7 @@ export const DetailsVideos = () => {
       setIsLiked(!isLiked);
       Alert.alert(
         'Error',
-        err.message ?? 'Ocorreu um erro, tente novamente mais tarde!'
+        err.message ?? 'Erro ao carregar vídeos!'
       );
     } finally {
       setIsLoading(false);
@@ -62,7 +62,7 @@ export const DetailsVideos = () => {
     } catch (err: any) {
       Alert.alert(
         'Error',
-        err.message ?? 'Ocorreu um erro, tente novamente mais tarde!'
+        err.message ?? 'Erro ao atualizar acessos da pagina'
       );
     } finally {
       setIsLoading(false);

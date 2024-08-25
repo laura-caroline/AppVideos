@@ -10,8 +10,9 @@ export const DetailVideo = ({
   handleLike,
 }: IDetailVideoProps) => {
   return (
-    <View style={styles.container}>
+    <View style={styles.container} testID='detail-video'>
       <Video
+        testID='video-player'
         source={{ uri: data?.hls_path!! }}
         style={styles.videoPlayer}
         resizeMode={ResizeMode.COVER}
@@ -26,7 +27,7 @@ export const DetailVideo = ({
       <Text style={styles.stats}>
         {data?.views} views • {data?.likes} likes
       </Text>
-      <Button title={isLiked ? 'Descurtir' : 'Curtir'} onPress={handleLike} />
+      <Button testID="like-button" title={isLiked ? 'Descurtir' : 'Curtir'} onPress={handleLike} />
     </View>
   );
 };

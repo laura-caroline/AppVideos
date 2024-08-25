@@ -45,10 +45,10 @@ export const SkeletonListVideos = () => {
     </View>
   )
   return (
-    <ScrollView>
+    <ScrollView testID='skeleton-list-videos'>
       <Item/>
       <Item/>
-    </ScrollView>
+    </ScrollView> 
     
   );
 };
