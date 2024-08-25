@@ -5,11 +5,10 @@ import { ListVideos } from '@pages/Home/ListVideos';
 import { DetailsVideos } from '@pages/Home/DetailsVideos';
 
 const Stack = createNativeStackNavigator();
-const showHeader = false;
 
 export function StackRoutes() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{animation: 'slide_from_right'}} >
       <Stack.Screen
         options={{ title: 'Listagem de vídeos' }}
         name={ScreenName.LIST_VIDEOS}

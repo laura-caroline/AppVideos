@@ -42,33 +42,6 @@ describe('ListVideos Component', () => {
 });
 
 
-// it('should increase the number of videos per page when the end of the list is reached', async () => {
-//   const mockVideos = [{ id: '1', title: 'Video 1' }, { id: '2', title: 'Video 2' }];
-//   VideoService.getListVideosPagination = jest.fn().mockResolvedValue(mockVideos);
-
-//   const { getByTestId } = render(<ListVideos />);
-
-//   await waitFor(() => {
-//     expect(getByTestId('list-media')).toBeTruthy();
-//     expect(VideoService.getListVideosPagination).toHaveBeenCalledTimes(1);
-//   });
-
-//   const listMedia = getByTestId('list-media');
-
-//   // Simula o scroll para o final da lista
-//   fireEvent.scroll(listMedia, {
-//     nativeEvent: {
-//       contentOffset: { y: 500 }, // Posição atual do scroll
-//       contentSize: { height: 1000 }, // Altura total do conteúdo
-//       layoutMeasurement: { height: 500 } // Altura visível da lista (tamanho da "tela")
-//     }
-//   });
-
-//   // Aguarda um pouco mais de tempo para que a segunda chamada seja feita
-//   await waitFor(() => {
-//     expect(VideoService.getListVideosPagination).toHaveBeenCalledTimes(2);
-//   }, { timeout: 3000 }); // Timeout maior para garantir que a chamada seja capturada
-// });
 
 it('should navigate to video details when an item is clicked', async () => {
   const mockVideos = [{ id: '1', title: 'Video 1' }];

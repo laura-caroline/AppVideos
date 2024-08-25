@@ -34,7 +34,6 @@ export const DetailsVideos = () => {
 
   const handleLikeVideo = async () => {
     try {
-      setIsLoading(true);
       setIsLiked(!isLiked);
       if (detailVideo) {
         const updateNumbersLikes = !isLiked
@@ -49,8 +48,6 @@ export const DetailsVideos = () => {
         'Error',
         err.message ?? 'Erro ao carregar vídeos!'
       );
-    } finally {
-      setIsLoading(false);
     }
   };
 
@@ -64,8 +61,6 @@ export const DetailsVideos = () => {
         'Error',
         err.message ?? 'Erro ao atualizar acessos da pagina'
       );
-    } finally {
-      setIsLoading(false);
     }
   };
 
