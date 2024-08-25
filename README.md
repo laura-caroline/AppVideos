@@ -18,6 +18,10 @@ Liste as ferramentas e softwares necessários para rodar o projeto:
     ```bash
     cd AppVideos
     ```
+2. Modifique a branch para master:
+    ```bash
+    git checkout master
+    ```
 3. Instale as dependências:
     ```bash
     npm install
