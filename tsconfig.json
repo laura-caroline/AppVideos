@@ -6,7 +6,8 @@
       "@pages/*": ["src/pages/*"],
       "@routes/*": ["src/routes/*"],
       "@services/*": ["src/services/*"],
-      "@utils/*": ["src/utils/*"]
+      "@utils/*": ["src/utils/*"],
+      "@stylesSystem/*": ["src/stylesSystem/*"],
     },
     "target": "esnext",
     "module": "esNext",

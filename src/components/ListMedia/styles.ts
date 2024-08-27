@@ -1,5 +1,5 @@
+import { colors } from '@stylesSystem/index';
 import { StyleSheet } from 'react-native';
-import { colors } from 'src/stylesSystem';
 
 export const styles = StyleSheet.create({
   list: {

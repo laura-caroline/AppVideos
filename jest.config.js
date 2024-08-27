@@ -6,6 +6,9 @@ module.exports = {
    '^@routes/(.*)$': '<rootDir>/src/routes/$1',
    '^@services/(.*)$': '<rootDir>/src/services/$1',
    '^@utils/(.*)$': '<rootDir>/src/utils/$1',
+   '^@stylesSystem/(.*)$': '<rootDir>/src/stylesSystem/$1',
+
+   
  },
  testMatch: ["**/__tests__/**/*-test.tsx"],
  collectCoverageFrom: [
